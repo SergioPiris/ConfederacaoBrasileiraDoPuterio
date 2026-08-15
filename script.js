@@ -39,7 +39,7 @@ const PLAYERS = [
     posShort: 'DC',
     posFull: 'Delantero Centro',
     pos: { top: 9, left: 50 },
-    photo: 'media/jugadores/Izan.jpeg',
+    photo: 'media/jugadores/Izan.png',
     song: 'media/audio/Saiko.mp3',
     instagram: 'https://www.instagram.com/izan_pz_/',
     info: [
@@ -72,11 +72,11 @@ const PLAYERS = [
        lo decidáis; de momento queda como "fichaje" temporal. */
     id: 'fernandezz',
     name: 'Fernandezz',
-    number: 7,
+    number: 11,
     posShort: 'ED',
     posFull: 'Ala Derecha',
     pos: { top: 36, left: 85 },
-    photo: 'media/jugadores/Carlos.jpeg',
+    photo: 'media/jugadores/Carlos.png',
     song: 'media/audio/Fernandezz.mp3',
     instagram: 'https://www.instagram.com/carlitosantunezz/',
     info: [
@@ -93,7 +93,7 @@ const PLAYERS = [
     posShort: 'MCO',
     posFull: 'Mediocentro Ofensivo',
     pos: { top: 63, left: 50 },
-    photo: 'media/jugadores/Sergio.jpeg',
+    photo: 'media/jugadores/Sergio.png',
     song: 'media/audio/ORei.mp3',
     instagram: 'https://www.instagram.com/its_sergio__/',
     info: [
@@ -106,11 +106,11 @@ const PLAYERS = [
   {
     id: 'polete',
     name: 'Polete',
-    number: 11,
+    number: 7,
     posShort: 'POR',
     posFull: 'Portero Delantero',
     pos: { top: 88, left: 50 },
-    photo: 'media/jugadores/Jaime.jpeg',
+    photo: 'media/jugadores/Jaime.png',
     song: 'media/audio/Jaime.mp3',
     instagram: 'https://www.instagram.com/jaiimeronceroo/',
     info: [
