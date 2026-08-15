@@ -41,11 +41,12 @@ const PLAYERS = [
     pos: { top: 9, left: 50 },
     photo: 'media/jugadores/Izan.jpeg',
     song: 'media/audio/Saiko.mp3',
+    instagram: 'https://www.instagram.com/izan_pz_/',
     info: [
-      ['Apodo', '✏️ Añade aquí su apodo'],
-      ['Frase de guerra', '✏️ Escribe su frase icónica'],
-      ['Especialidad en la fiesta', '✏️ Rematador nato... ¿de la pista de baile?'],
-      ['Anécdota memorable', '✏️ Cuenta aquí una anécdota']
+      ['Nombre, edad', 'Izan , 19'],
+      ['Punto fuerte', 'Cocina bien sobroso'],
+      ['Estudios', 'Tecnico deportivo y marketing'],
+      ['Dato curioso', 'Presidente de un equipo de fútbol en Badajoz']
     ]
   },
   {
@@ -57,11 +58,12 @@ const PLAYERS = [
     pos: { top: 36, left: 15 },
     photo: 'media/jugadores/Gomez.png',
     song: 'media/audio/Xiyo.mp3',
+    instagram: 'https://www.instagram.com/i_gmezz30/',
     info: [
-      ['Apodo', '✏️ Añade aquí su apodo'],
-      ['Frase de guerra', '✏️ Escribe su frase icónica'],
-      ['Especialidad en la fiesta', '✏️ Velocidad punta camino del after'],
-      ['Anécdota memorable', '✏️ Cuenta aquí una anécdota']
+      ['Nombre, edad', 'Iván (Gomez) , 21'],
+      ['Punto fuerte', 'Deportista de élite'],
+      ['Estudios', 'Deportes'],
+      ['Dato curioso', 'Arbitra futbol de primera Extremeña']
     ]
   },
   {
@@ -76,11 +78,12 @@ const PLAYERS = [
     pos: { top: 36, left: 85 },
     photo: 'media/jugadores/Carlos.jpeg',
     song: 'media/audio/Fernandezz.mp3',
+    instagram: 'https://www.instagram.com/carlitosantunezz/',
     info: [
-      ['Apodo', '✏️ Añade aquí su apodo'],
-      ['Frase de guerra', '✏️ Escribe su frase icónica'],
-      ['Especialidad en la fiesta', '✏️ Puesto libre... ¡se aceptan candidaturas!'],
-      ['Anécdota memorable', '✏️ Cuenta aquí una anécdota']
+      ['Nombre, edad', 'Carlos , 21'],
+      ['Punto fuerte', 'Primo de Quevedo'],
+      ['Estudios', 'Matematicas'],
+      ['Dato curioso', 'Contactos en todas las discotecas']
     ]
   },
   {
@@ -92,11 +95,12 @@ const PLAYERS = [
     pos: { top: 63, left: 50 },
     photo: 'media/jugadores/Sergio.jpeg',
     song: 'media/audio/ORei.mp3',
+    instagram: 'https://www.instagram.com/its_sergio__/',
     info: [
-      ['Apodo', '✏️ Añade aquí su apodo'],
-      ['Frase de guerra', '✏️ Escribe su frase icónica'],
-      ['Especialidad en la fiesta', '✏️ El cerebro de la Confederação'],
-      ['Anécdota memorable', '✏️ Cuenta aquí una anécdota']
+      ['Nombre, edad', 'Sergio , 19'],
+      ['Punto fuerte', 'Contactos en cualquier sitio'],
+      ['Estudios', 'Programación'],
+      ['Dato curioso', 'Es el Rey de la fiesta']
     ]
   },
   {
@@ -108,11 +112,12 @@ const PLAYERS = [
     pos: { top: 88, left: 50 },
     photo: 'media/jugadores/Jaime.jpeg',
     song: 'media/audio/Jaime.mp3',
+    instagram: 'https://www.instagram.com/jaiimeronceroo/',
     info: [
-      ['Apodo', '✏️ Añade aquí su apodo'],
-      ['Frase de guerra', '✏️ Escribe su frase icónica'],
-      ['Especialidad en la fiesta', '✏️ Bajo palos y al pie del cañón'],
-      ['Anécdota memorable', '✏️ Cuenta aquí una anécdota']
+      ['Nombre, edad', 'Jaime , 20'],
+      ['Punto fuerte', 'Tiene 3 coches'],
+      ['Estudios', 'Automoción y mecánica'],
+      ['Dato curioso', 'Contador de anecdotas y bailador experto']
     ]
   }
 ];
@@ -154,6 +159,7 @@ const cardPosition       = document.getElementById('card-position');
 const cardPositionFull    = document.getElementById('card-position-full');
 const cardPhoto             = document.getElementById('card-photo');
 const cardSilhouette         = document.getElementById('card-silhouette');
+const cardInstagram           = document.getElementById('card-instagram');
 const cardInfo                = document.getElementById('card-info');
 
 const mainAudio      = document.getElementById('main-audio');
@@ -267,6 +273,10 @@ function openPlayerCard(playerId) {
   };
   testImg.src = player.photo;
 
+  // Enlace de Instagram del jugador (icono fijo en el HTML, solo cambia el destino)
+  cardInstagram.href = player.instagram;
+  cardInstagram.setAttribute('aria-label', `Instagram de ${player.name}`);
+
   // Rellenar la información del lado derecho
   cardInfo.innerHTML = player.info.map(([label, value]) => `
     <dt>${label}</dt>
@@ -303,6 +313,12 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && cardOverlay.classList.contains('is-open')) {
     closePlayerCard();
   }
+});
+
+// El icono de Instagram no debe interferir con el cierre del modal
+// ni con la reproducción/pausa de la música al pulsarlo.
+cardInstagram.addEventListener('click', (e) => {
+  e.stopPropagation();
 });
 
 
