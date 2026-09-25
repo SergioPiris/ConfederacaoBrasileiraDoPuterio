@@ -39,7 +39,7 @@ const PLAYERS = [
     posShort: 'DC',
     posFull: 'Delantero Centro',
     pos: { top: 9, left: 50 },
-    photo: 'media/jugadores/Izan.png',
+    photo: 'media/jugadores/Izan.png?v=2',
     song: 'media/audio/Saiko.mp3',
     instagram: 'https://www.instagram.com/izan_pz_/',
     info: [
