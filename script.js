@@ -63,7 +63,7 @@ const PLAYERS = [
       ['Nombre, edad', 'Iván (Gomez) , 21'],
       ['Punto fuerte', 'Deportista de élite'],
       ['Estudios', 'Deportes'],
-      ['Dato curioso', 'Arbitra futbol de primera Extremeña']
+      ['Dato curioso', 'Arbitra futbol de primera Extremeña y entrena a un equipo de fútbol candidato al ascenso']
     ]
   },
   {
@@ -83,7 +83,7 @@ const PLAYERS = [
       ['Nombre, edad', 'Carlos , 21'],
       ['Punto fuerte', 'Primo de Quevedo'],
       ['Estudios', 'Matematicas'],
-      ['Dato curioso', 'Contactos en todas las discotecas']
+      ['Dato curioso', 'Le ganó a Magnus Carlsen']
     ]
   },
   {
@@ -98,9 +98,9 @@ const PLAYERS = [
     instagram: 'https://www.instagram.com/its_sergio__/',
     info: [
       ['Nombre, edad', 'Sergio , 19'],
-      ['Punto fuerte', 'Contactos en cualquier sitio'],
+      ['Punto fuerte', 'Es el Rey de la fiesta'],
       ['Estudios', 'Programación'],
-      ['Dato curioso', 'Es el Rey de la fiesta']
+      ['Dato curioso', 'Contactos en cualquier sitio']
     ]
   },
   {
@@ -160,6 +160,7 @@ const cardPositionFull    = document.getElementById('card-position-full');
 const cardPhoto             = document.getElementById('card-photo');
 const cardSilhouette         = document.getElementById('card-silhouette');
 const cardInstagram           = document.getElementById('card-instagram');
+const cardWarning             = document.getElementById('card-warning');
 const cardInfo                = document.getElementById('card-info');
 
 const mainAudio      = document.getElementById('main-audio');
@@ -276,6 +277,9 @@ function openPlayerCard(playerId) {
   // Enlace de Instagram del jugador (icono fijo en el HTML, solo cambia el destino)
   cardInstagram.href = player.instagram;
   cardInstagram.setAttribute('aria-label', `Instagram de ${player.name}`);
+
+  // Advertencia exclusiva de O Rei (id 'orei')
+  cardWarning.hidden = player.id !== 'orei';
 
   // Rellenar la información del lado derecho
   cardInfo.innerHTML = player.info.map(([label, value]) => `
